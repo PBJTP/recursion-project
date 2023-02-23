@@ -13,9 +13,16 @@ function fib(num) {
     return array;
 }
 
-console.log(fib(77));
-// Fibonacci sequence using recursion
+console.log(fib(5));
 
+// Fibonacci sequence using recursion
 function fibsRec(num) {
-    
+
+    //One liner, also had no idea the spread operator could be used like this.
+    //Fun rabbit hole to go down for a few hours
+    return num == 1 ? [0] :
+        num == 2 ? [0,1] :
+        [...fibsRec(num - 1), fibsRec(num - 1)[num - 2] + fibsRec(num - 1)[num - 3]];
 }
+
+console.log(fibsRec(10));
